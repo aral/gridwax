@@ -5,6 +5,16 @@ activate :blog
 
 page "/feed.xml", :layout => false
 
+
+activate :directory_indexes
+set :archives, "archives.html"
+
+# custom middleman blog setup
+set :erb, :layout_engine => :slim
+set :blog_layout_engine, "slim"
+set :blog_index_template, "blog_index"
+set :blog_layout, "blog_layout"
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
